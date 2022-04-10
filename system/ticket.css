@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+
+
+@font-face {
+    font-family:Fake Receipt;
+    src: url(fuente/Led\ Panel\ Station\ On.ttf);
+}
+.texo{
+    /* font-family: 'Chathura', sans-serif; */
+   /* font-family: 'Codystar', cursive; */
+   /* font-family: 'Roboto Mono', monospace; */
+   /* font-family: 'Abel', sans-serif; */
+   /* font-family: 'Rajdhani', sans-serif; */
+   /* font-family:Receiptional Receipt; */
+   /* font-family: 'IBM Plex Mono', monospace; */
+   /* font-family: 'Volkhov', serif; */
+   /* font-family: 'Changa', sans-serif; */
+   /* font-family: 'Mitr', sans-serif; */
+   /* font-family: 'Alata', sans-serif; */
+   
+    font-size: 13px;
+    /* font-weight: bold; */
+    font-family:Fake Receipt;
+}
+
+body{
+    font-family:Fake Receipt;
+    padding: 0px;
+    box-sizing: border-box;
+    font-weight: 600;
+    background-color: #111111;
+}
+
+*{
+    margin: 0;
+padding: 0;
+
+}
+tbody,
+table {
+    border-top: 1px dashed black;
+    border-collapse: collapse;
+}
+
+.ticket{
+    background-color: #FFF;
+}
+
+td.producto,
+th.producto {
+    width: 500px;
+    max-width: 500px;
+    
+}
+
+td.cantidad,
+th.cantidad {
+    width: 200px;
+    max-width: 200px;
+    word-break: break-all;
+
+}
+
+td.precio,
+th.precio {
+    width: 300px;
+    max-width: 300px;
+    word-break: break-all;
+   
+}
+
+
+td.nota,
+th.nota {
+    width: 60px;
+    max-width: 40px;
+    word-break: break-all;
+    
+}
+
+
+
+.centrado {
+    text-align: center;
+    align-content: center;
+    padding-left:10px;
+    padding: 3px;
+}
+
+h1 {
+    text-align: center;
+    align-content: center;
+    padding-left: 2px;
+    font-size:17px;
+   
+    padding: 5px;
+}
+
+h4{
+     text-align: center;
+    align-content: center;
+    padding-left: 2px;
+    font-size:14px;
+    
+    padding: 5px;
+}
+
+p{
+    text-align: center;
+    align-content: center;
+    padding-left: 2px;
+    font-size:17px;
+  
+    padding: 5px;
+  
+}
+
+
+.ticket {
+    width:255px;
+    max-width: 255px;
+    padding: 0px;
+}
+
+
