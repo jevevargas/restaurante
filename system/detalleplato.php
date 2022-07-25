@@ -137,7 +137,7 @@ if($estadomesa == 0){
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">CERRAR</button>
-  <button type="button" class="btn btn-success" onclick="ordene()" id="AgregarOrden">ORDENAR</button>
+  <button type="button" class="btn btn-success" onclick="ordene()" id="AgregarOrden" data-dismiss="modal">ORDENAR</button>
       </div>
     </div>
   </div>

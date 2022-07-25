@@ -51,19 +51,19 @@ while ($result = $estado->fetch()) {
     	while ($fila = $resultado->fetch_assoc()) {
     		$salida.="<tr>
     		<td style='text-align:center; font-size:12px;'>
-              <button class='btn btn-light btn-sm btn-block ordenar' data-toggle='modal' data-target='#ordenar' value=" .$fila['id_bodega'].">".$fila['id_bodega']."</button>
+              <button class='btn  btn-sm btn-block ordenar' data-toggle='modal' data-target='#ordenar' value=" .$fila['id_bodega'].">".$fila['id_bodega']."</button>
 			</td>
 
     		<td style='text-align:center; font-size:12px;'>
-			<button class='btn btn-light btn-sm btn-block ordenar' data-toggle='modal' data-target='#ordenar' value=" .$fila['id_bodega'].">".$fila['producto_bodega']."</button>
+			<button class='btn btn btn-sm btn-block ordenar' data-toggle='modal' data-target='#ordenar' value=" .$fila['id_bodega'].">".$fila['producto_bodega']."</button>
 			</td>
 
     		<td style='text-align:center; font-size:12px;'>
-			<button class='btn btn-light btn-sm btn-block ordenar' data-toggle='modal' data-target='#ordenar' value=" .$fila['id_bodega'].">".$fila['cantidad_bodega']."</button>
+			<button class='btn btn-sm btn-block ordenar' data-toggle='modal' data-target='#ordenar' value=" .$fila['id_bodega'].">".$fila['cantidad_bodega']."</button>
 			</td>
 
             <td style='text-align:center; font-size:12px;'>
-			<button class='btn btn-light btn-sm btn-block ordenar' data-toggle='modal' data-target='#ordenar' value=" .$fila['id_bodega'].">".$fila['costo']."</button>
+			<button class='btn btn-sm btn-block ordenar' data-toggle='modal' data-target='#ordenar' value=" .$fila['id_bodega'].">".$fila['costo']."</button>
 			</td>
 
     		<td style='text-align:center' >

@@ -11,6 +11,7 @@ $factura=$_POST['factura'];
 $idu=$_SESSION['idusuario'];
 $hora=date('H:i:s');
 $horalarga=date('Y-m-d H:i:s');
+$horacorta=date('Y-m-d');
 
 $total=$cantbode+$ncantbode;
 
@@ -21,9 +22,9 @@ require_once('../config/conexion.php');
 $consulta = "UPDATE bodega
 SET cantidad_bodega= :total WHERE id_bodega = :idbode";
 
-$consulta2 = "insert into movbode(canmovbod,fechamovbod,idusuario,id_bodega,factura,proveedor,costomov) 
+$consulta2 = "insert into movbode(canmovbod,fechamovbod,idusuario,id_bodega,factura,proveedor,costomov,fechamovbodecorta) 
 values
-(:ncantbode,:horalarga,:idu,:idbode,:factura,:proveedor,:coston)";
+(:ncantbode,:horalarga,:idu,:idbode,:factura,:proveedor,:coston,:horacorta)";
 
 $sql = $pdo->prepare($consulta);
 $sql2 = $pdo->prepare($consulta2);
@@ -39,6 +40,7 @@ $sql2->bindParam(':idbode',$idbode,PDO::PARAM_INT);
 $sql2->bindParam(':factura',$factura,PDO::PARAM_STR);
 $sql2->bindParam(':proveedor',$proveedor,PDO::PARAM_STR);
 $sql2->bindParam(':coston',$coston,PDO::PARAM_STR);
+$sql2->bindParam(':horacorta',$horacorta,PDO::PARAM_STR);
 
 
 $sql->execute(); 

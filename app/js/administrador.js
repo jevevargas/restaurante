@@ -3,6 +3,7 @@ $(document).ready(function(){
     todomenu(); 
     permisos();
     contenidoUltimo();
+    detallemepresa();
     });
 
     function mayus(e){
@@ -48,6 +49,20 @@ $(document).ready(function(){
              })
              
          } 
+
+         function detallemepresa(){  
+           // var idboton = $('#idboton').val();
+            $.ajax({
+                 url : 'detallemepresa.php',
+                 type : 'POST',
+                 dataType : 'html',
+                 data : {},
+             })
+             .done(function(r){
+                 $("#detallemepresa").html(r);
+             })
+             
+         }
          
 
 function ingresarmenu(){
@@ -280,3 +295,55 @@ $(document).ready(function(){
     })
 });
 
+
+
+function actempre(){
+    var nome = $('#nome').val(),
+    dire = $('#dire').val(),
+    tele = $('#tele').val(),
+    whate = $('#whate').val(),
+    giroe = $('#giroe').val(),
+    nite = $('#nite').val(),
+    ncre = $('#ncre').val(),
+    rese = $('#rese').val(),
+    aue = $('#aue').val(),
+    sere = $('#sere').val();
+    $.ajax({
+        url: 'aempresa.php', // Es importante que la ruta sea correcta si no, no se va a ejecutar
+        method: 'POST',
+        data: { nome:nome, dire:dire,tele:tele,whate:whate,giroe:giroe,nite:nite,ncre:ncre,rese:rese,aue:aue,sere:sere},
+        beforeSend: function(){},
+        success: function(){
+            $("#nome").addClass("is-valid");
+            $("#dire").addClass("is-valid");
+            $("#tele").addClass("is-valid");
+            $("#whate").addClass("is-valid");
+            $("#ncre").addClass("is-valid");
+            $("#rese").addClass("is-valid");
+            $("#aue").addClass("is-valid");
+            $("#sere").addClass("is-valid");
+
+
+        const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 1000,
+        timerProgressBar: true,
+        onOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+    })
+    
+        Toast.fire({
+        icon: 'success',
+        title: 'Actualizado'
+        })
+        
+
+        detalleempresa();
+            }
+        });
+
+}

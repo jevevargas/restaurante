@@ -39,6 +39,8 @@
                 ?><div class="col-md-12"><?php include('administrador.php'); ?></div><?php
               }elseif($tipo==5){
                 ?><div class="col-md-12"><?php include('caja.php'); ?></div><?php
+              }elseif($tipo==3){
+                ?><div class="col-md-12"><?php  include('bar.php');  ?></div><?php
               }
               ?>
             </div> 
@@ -47,7 +49,7 @@
 		</div>
 
 
-
+<script src="../app/js/bootstrap.min.js"></script>
      <?php  require_once('pie.php');  ?>
     </body>
 </html>

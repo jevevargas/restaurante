@@ -60,7 +60,9 @@
                       <div class="col-md-12"><center><button class="btn btn-success" onclick="ingresarbodega()">INGRESAR</button></center></div>
                    </div>
                    <hr>
-                   <div class="col-md-12 alert alert-success">INGRESE PRIMERO EL PRODUCTO Y DESPUES EN LA TABLA DE BODEGA CARGAR LA CANTIDAD</div>
+                   <div class="col-md-12 alert alert-success">Ingrese el producto nuevo primero, y despues cargue las cantidades a bodega</div>
+                   <hr>
+                   <center><a href="movbodega.php" class="btn btn-primary">Ver moviemientos de bodega</a></center>
                   </div>
 
 

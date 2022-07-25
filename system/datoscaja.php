@@ -11,7 +11,7 @@ while ($resultc = $todalazona->fetch()) {
 <div class="col-md-12">
     <div class="row">
         <div class="col-md-6"><h1><img src="../imagen/caja.png" width="50px" alt=""> #<?php echo $resultc -> caja; ?></h1></div>
-        <div class="col-md-6"><h1><?php echo $resultc -> nombre; ?></h1></div>
+        <div class="col-md-6"><h5><?php echo $resultc -> nombre; ?></h5></div>
     </div>
 </div>
 <div class="col-md-12 alert alert-success">APERTURA $<?php  echo $resultc -> fondocaja;  ?> __ _ <?php  echo $resultc -> iniciocaja;  ?></div>

@@ -11,8 +11,8 @@ $usu=$_SESSION['idusuario'];
       <div class="col-md-12">
         <div class="col-md-12" id="datoscaja"></div>
       </div>
-      <div class="col-md-12"><center><button class="btn btn-success" data-toggle="modal" data-target="#menu" ><i class="bi bi-calculator-fill" style="font-size:20px;"></i> AMPLIAR LA VIDA DE LA CAJA</button>
-
+      <div class="col-md-12"><center><button class="btn btn-success" data-toggle="modal" data-target="#fechacaja" ><i class="bi bi-calculator-fill" style="font-size:20px;"></i> AMPLIAR LA VIDA DE LA CAJA</button>
+<hr>
       <button class="btn btn-danger" data-toggle="modal" data-target="#menu" ><i class="bi bi-cup-straw" style="font-size:20px;"></i> MENU</button>
     </center></div>
       <hr>

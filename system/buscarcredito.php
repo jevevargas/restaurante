@@ -22,10 +22,10 @@
     				<tr id='titulo'>
     				
     					<td style='text-align:center'>ID</td>
-                        <td style='text-align:center'>NOMBRE</td>
-    					          <td style='text-align:center'>ORDEN</td>
-    					          <td style='text-align:center'>TOTAL</td>
-                        <td style='text-align:center'>FECHA</td>
+                        <td style='text-align:center'>Nombre</td>
+    					          <td style='text-align:center'>Orden</td>
+    					          <td style='text-align:center'>Total</td>
+                        <td style='text-align:center'>Fecha</td>
                         <td style='text-align:center'></td>
                         <td style='text-align:center'></td>
     			   	</tr>
@@ -47,7 +47,7 @@
     		
     		<td style='text-align:center; font-size:12px;'>".$fila['idpago']."</td>
 
-    		<td style='text-align:center; font-size:12px;'>".$fila['nomcliente']."</td>
+    		<td style='text-align:center; font-size:12px;' class='mt-5'>".$fila['nomcliente']."</td>
 
     		<td style='text-align:center; font-size:12px;'>".$fila['orden']."</td>
             <td style='text-align:center; font-size:12px;'><b>($".$fila['totalpago'].")</b></td>

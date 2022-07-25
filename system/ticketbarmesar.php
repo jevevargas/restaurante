@@ -110,7 +110,7 @@
         =============================       
     <center><p>COMPROBANTE DE COCINA</p></center>
         </div>
-        <input type="text" id="imp" value="1" style="display:none">
+        <input type="text" id="imp" value="2" style="display:none">
 
 <script>
   $(document).ready(function() {

@@ -2,6 +2,7 @@
 session_start();
 $usu=$_SESSION['idusuario']; //echo $usu;
 include('../config/conexion.php');
+error_reporting(0);
 date_default_timezone_set('America/El_Salvador');
 $todalcaja = $pdo->prepare(" SELECT * FROM caja WHERE idusuario = '$usu'  ");
 $todalcaja->execute();
@@ -42,6 +43,6 @@ $total=0;
 } ?>
 
 <tr>
-    <td colspan='4'  class="bg-success"><h4 class="text-center"  style="color:#FFF; padding-top:5px;">$<?php echo number_format((float) $total,2,'.','');   ?></h4></td>
-    <td colspan='3'><a href="" class="btn btn-danger" >IMPRIMIR PDF</a> <a href="ticketegreso?id=<?php echo $usu; ?>" class="btn btn-warning" onclick="window.open(this.href, this.target, 'width=800,height=500'); return false;">IMPRIMIR TICKET</a></td>
+    <td colspan='3'  class="bg-info"><h4 class="text-center"  style="color:#FFF; padding-top:5px;">$<?php echo number_format((float) $total,2,'.','');   ?></h4></td>
+    <td colspan='4'><a href="" class="btn btn-danger" >Imprimir pdf</a> <a href="ticketegreso?id=<?php echo $usu; ?>" class="btn btn-warning" onclick="window.open(this.href, this.target, 'width=800,height=500'); return false;">Imprimir ticket</a></td>
 </tr>

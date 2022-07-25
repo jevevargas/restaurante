@@ -7,7 +7,7 @@
     $salida = "";
     // $orden = "";
 
-    $query = "SELECT * FROM plato WHERE estadoplato='1'  ORDER By idplato LIMIT 4";
+    $query = "SELECT * FROM plato WHERE estadoplato='1'  ORDER By idplato LIMIT 5";
 
     if (isset($_POST['consulta'])) {
     	$q = $enlace->real_escape_string($_POST['consulta']);

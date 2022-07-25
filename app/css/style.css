@@ -8211,6 +8211,49 @@ body{
   .mensaje{
     padding-top: 40px;
   }
+
+
+  .bar{
+    background-color: #FFF;
+    margin-top: 5px;
+    margin-left: 5px;
+  }
+
+  .admincont{
+    background-color: #FFF;
+    margin-top: 5px;
+    margin-left: 5px;
+   padding: 10px;
+  }
+
+  .admincontlateral{
+    border-right: 1px solid #AAA;
+  }
+
+  .in{
+    border: 0px solid #FFF;
+    
+  }
+
+  .admincontover{
+    height: 80vh;
+    overflow: auto;
+    overflow-x: hidden;
+  }
+
+  .admincontover::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  .admincontover::-webkit-scrollbar-thumb {
+    background: #002040;
+      border: 1px solid #002040 ;
+    
+  }
+
+
+
+
 /* responsive */
 
 

@@ -130,12 +130,33 @@
                      <div class="col-md-12">
 
                             <div class="col-md-12">
-<center>
-    <a href="precuentaenvio.php?orden=<?php  echo $orden; ?>" class="btn btn-info" onclick="window.open(this.href, this.target, 'width=800,height=500'); return false;"><i class="bi bi-printer"></i> TICKET</a>
+           <?php  
+                 $sql = "SELECT * FROM venta WHERE fechaorden  BETWEEN  '$inicio' AND '$final' AND orden='$orden' AND estadoorden='0' "; 
+                 $query =$pdo -> prepare($sql); 
+                 $query -> execute(); 
+                 $results = $query -> fetchAll(PDO::FETCH_OBJ); 
+                  $cuenta = $query -> rowCount();
 
+                  if($cuenta > 20){
+                    ?>
+                     <div class="col-md-12"><h5><?php  echo $cuenta; ?> Items registrados</h5></div>
+                     <a class="btn btn-info" href="precuentacaja.php?orden=<?php  echo $orden; ?>" class="btn btn-info" onclick="window.open(this.href, this.target, 'width=800,height=500'); return false;"><i class="bi bi-printer-fill"></i> TICKET</a>
 
-                                <a href="" class="btn btn-info"><i class="bi bi-printer"></i> RECIBO</a>
-</center> 
+                     <button class="btn btn-warning"  data-toggle="modal" data-target="#multiple">FACTURACION MULTIPLE</button>
+
+                    <?php
+                  }elseif($cuenta <= 20){
+                  ?>
+                   <div class="col-md-12"><h5><?php  echo $cuenta; ?> Items registrados</h5></div>
+                  <center>
+                    <a class="btn btn-info" href="precuentacaja.php?orden=<?php  echo $orden; ?>" class="btn btn-info" onclick="window.open(this.href, this.target, 'width=800,height=500'); return false;"><i class="bi bi-printer-fill"></i> TICKET</a>
+
+                    <a href="reciboenvio.php?orden=<?php  echo $orden; ?>" class="btn btn-info" onclick="window.open(this.href, this.target, 'width=800,height=500'); return false;"><i class="bi bi-printer-fill"></i> RECIBO</a>
+                  </center> 
+
+                  <?php
+                  }
+                  ?>
                             </div>
                             <br>
                             <hr>

@@ -16,7 +16,7 @@
         </nav>
 
         <!-- Page Content  -->
-          <div id="content" class="container-fluid">
+          <div id="content" cla ss="container-fluid">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
              <?php require_once('lateral.php');  ?>
             </nav>

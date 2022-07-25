@@ -67,12 +67,12 @@
 
                   </div>
 
-                  <div class="col-md-7 ingresarPlato">
+                  <div class="col-md-7 ingresarPlato DetalleVentapedido">
                       
 <div class="col-md-12r"><center><a href="nuevacaja.php" class="btn-light btn"><i class="bi bi-plus-circle-fill" style="color:#A3D900; font-size:20px;"></i> CREAR UNA CAJA</a></center></div>
 <br>
                       <div class="col-md-12 table-responsive">
-                          <table class="table table-bordered">
+                          <table class="table table-bordered table-hover table-striped">
                               <thead>
                                   <tr>
                                       <td>ID</td>

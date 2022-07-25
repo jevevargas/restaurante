@@ -1,16 +1,4 @@
-<?php
- error_reporting(E_ERROR);
-require_once('../config/conexion.php');
 
-$idu=$_SESSION['idusuario'];
-$todalcaja = $pdo->prepare(" SELECT * FROM caja ");
-$todalcaja->execute();
-while ($resultc = $todalcaja->fetch()) {
-  $inicio =$resultc ->iniciocaja;   //echo $inicio;
-  $final =$resultc ->fincaja; ;  //echo $final;
-  $estado=$resultc -> estadocaja;  //echo $estado;
-}  
-?>
 <div class="container-fluid">
 
             <button type="button" id="sidebarCollapse" class="btn btn-danger">
@@ -25,13 +13,35 @@ while ($resultc = $todalcaja->fetch()) {
               <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
                 <?php
-                 if($estado==1){
-                   ?>
+               
+                error_reporting(E_ERROR);
+               require_once('../config/conexion.php');
+               $idu=$_SESSION['idusuario'];
+               $sql = "SELECT * FROM caja WHERE  estadocaja='1' "; 
+               $query =$pdo -> prepare($sql); 
+               $query -> execute(); 
+               $results = $query -> fetchAll(PDO::FETCH_OBJ); 
+               
+               if($query -> rowCount() > 0)   { 
+                 
+
+                 date_default_timezone_set('America/El_Salvador');
+                 $todalazona = $pdo->prepare("SELECT * FROM caja WHERE estadocaja='1'");
+               $todalazona->execute();
+             while ($resultb = $todalazona->fetch()) {
+              $inicio =$resultb ->iniciocaja;   //echo $inicio;
+              $final =$resultb ->fincaja; ;  //echo $final;
+              $estado=$resultb -> estadocaja;  //echo $estado;
+
+             }
+                  ?>
                    <a class="nav-link" href="#"><i class="bi bi-circle-fill" style="color:#63BE09;"></i><span class="sr-only">(current)</span> (INICIO: <?php echo $fecha1 = date("d-m-Y H:s:i", strtotime($inicio)); ?>) (FINAL: <?php  echo $fecha2 = date("d-m-Y H:s:i", strtotime($final));  ?>)</a>
-                   <?php
-                 }elseif($estado==0){
-                   ?><span style="color:#FFF;">No hay cajas abiertas</span>  <?php
-                 }
+                  <?php
+                     
+                  }elseif($query -> rowCount() == 0){
+                   ?> <span style="color:#FFF;">No hay cajas abiertas</span> <?php 
+                  }
+         
                 ?>
                    
               </li>

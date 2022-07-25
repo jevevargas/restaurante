@@ -6,6 +6,7 @@ $(document).ready(function(){
     datoscaja();
     tablaegreso();
     tablacaja();
+    tablamixta();
     });
 
     setInterval(function(){
@@ -17,6 +18,12 @@ $(document).ready(function(){
         pedidocliente();
       },1000
       );
+
+      setInterval(function(){
+        tablamixta();
+      },3000
+      );
+
 
 
 function pedidoscaja(){  
@@ -103,6 +110,21 @@ function pedidoscaja(){
      })
      .done(function(r){
          $("#tablacaja").html(r);
+     })
+     
+ } 
+
+
+ function tablamixta(){  
+    var ordenm = $('#ordenm').val();
+    $.ajax({
+         url : 'tablamixta.php',
+         type : 'POST',
+         dataType : 'html',
+         data : {ordenm:ordenm},
+     })
+     .done(function(r){
+         $("#tablamixta").html(r);
      })
      
  } 
@@ -795,3 +817,42 @@ function pedidoscaja(){
 
         });
     }
+
+    //Es lo mismo que document.ready, pero mas cordo
+$(function(){
+
+    //Aquí es donde te digo que le hablo al document, le ligo el evento, le digo que selectores y le paso lo que quiero que haga
+    $( document ).on( 'click', '.validare', function(){
+    let val = $(this).val();
+      //Revisa en que status está el checkbox y controlalo según lo //desees
+      if( $( this ).is( ':checked' ) ){
+        //alert( 'Guardando información de '+ val +'...' );
+        $.ajax({
+            url:' impmultiple.php',
+            type: 'POST',
+            data:{'val':val},
+            beforeSend:function(){},
+            
+             success: function(){
+                 
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'AGREGADO A LA FACTURA #' + val,
+                    showConfirmButton: false,
+                    timer: 1000
+                  })
+            
+            
+                    }  
+                    
+              
+            });
+      }
+      
+      else{
+        alert( 'Desguardando información de ' + val + '...' );
+      }
+    });
+    
+    });

@@ -11,7 +11,7 @@
 </head>
     <body>
     <div class="wrapper d-flex align-items-stretch">
-        <nav id="sidebar" class="active">
+        <nav id="sidebar" class="active lou">
             <?php require_once('menu.php'); ?>
         </nav>
 

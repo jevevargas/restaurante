@@ -42,7 +42,7 @@
                                 <select name="impplato" id="impplato" class="form-control">
                                     <option value="1">COCINA</option>
                                     <option value="2">BAR</option>
-                                    <option value="3">PIZZA</option>
+                                    <option value="3">PUPUSAS</option>
                                 </select>
                              </div>
 
@@ -50,7 +50,7 @@
                                 <select name="catplato" id="catplato" class="form-control">
                                 <?php
                                  require_once('header.php');
-                                    $estado = $pdo->prepare(" SELECT * FROM categoria ");
+                                    $estado = $pdo->prepare(" SELECT * FROM categoria  ORDER BY categoria ASC ");
                                     $estado->execute();
                                     while ($result = $estado->fetch()) {
                                  ?>

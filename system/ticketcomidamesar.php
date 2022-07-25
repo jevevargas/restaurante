@@ -100,7 +100,7 @@ $(document).ready(function() {
         $todalcaja->execute();
         while ($resultc = $todalcaja->fetch()) {
           $inicio =$resultc ->iniciocaja;   //echo $inicio;
-          $final=date('Y-m-d H:i:s');  //echo $final;
+          $inicio =$resultc ->fincaja;  //echo $final;
         }          
                                 
         $pedido = $pdo->prepare(" SELECT SUM(cantidadorden) AS cantidades, nomorden,idventa, precioventa , impresionplato, acocina

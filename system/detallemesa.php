@@ -22,11 +22,13 @@ header("Location: $url");
   <title>BIENVENIDO <?php echo $nombre; ?></title>
   <link rel="stylesheet" href="../app/css/bootstrap.css">
     <link rel="stylesheet" href="../app/css/style.css">
+    <link rel="stylesheet" href="../app/css/icono.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://kit.fontawesome.com/c12fa38f79.js" crossorigin="anonymous"></script>
     <script src="../app/js/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="../app/js/cdn.js"></script>
   <script src="../app/js/mesa.js"></script>
   <script src="../app/js/detalle.js"></script>
 </head>

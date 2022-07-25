@@ -7,26 +7,6 @@
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="../app/js/mesa.js"></script>
 <script>
-$(document).ready(function() {
- 
- orden = $("#orden").val();
- 
- console.log(orden);
- $.ajax({
- url:'fact.php',
- type: 'POST',
- data:{'orden':orden},
- beforeSend: function () {},
-    success: function () 
-    {
-      DetalleVenta();
-    }
-  });
- 
- 
-     
- } );
- 
 		function imprimir() {
   window.print();
 }
@@ -53,7 +33,7 @@ $(document).ready(function() {
 <body onload="window.print()">
 	<?php $orden=$_GET['orden'];  ?>
 	<div class="ticket">
-           
+  <input type="text" value="<?php echo $orden;  ?>" id="orden" style="display:none">        
             <?php
             date_default_timezone_set('America/El_Salvador');
               error_reporting(E_ERROR);
@@ -70,7 +50,7 @@ $(document).ready(function() {
          <?php } ?>
          =============================
          <center><h1 style="font-size:40px"><?php echo $orden ?></h1></center>
-         <h1 class="centrado">ENVIO A COCINA</h1> 
+         <h1 class="centrado">ENVIO A PUPUSERIA</h1> 
          =============================
          <?php
       $estado = $pdo->prepare(" SELECT * FROM orden WHERE orden='$orden' ");
@@ -128,8 +108,30 @@ $(document).ready(function() {
         =============================       
     <center><p>COMPROBANTE DE COCINA</p></center>
         </div>
-	
+        <input type="text" id="imp" value="3" style="display:none">
+<script>
+  $(document).ready(function() {
+ 
+ orden = $("#orden").val(),
+ imp = $("#imp").val();
+ 
+ console.log(orden);
+ $.ajax({
+ url:'fact.php',
+ type: 'POST',
+ data:{'orden':orden,'imp':imp},
+ beforeSend: function () {},
+    success: function () 
+    {
+      //DetalleVenta();
+    }
+  });
+ 
+ 
+     
+ } );
 
+</script>
 
 </body>
 </html>

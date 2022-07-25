@@ -19,7 +19,7 @@
 <body>
       <div class="acceso">
            <div class="accesotwo">
-               <center><i class="fa-solid fa-circle-user icono"></i></center>
+               <center><img src="imagen/logo.jpg" alt=""></center>
                <div class="form-group">
                    <label for="">ACCESO</label>
                    <input type="password"  id="clave" class="form-control rounded-0" autofocus>

@@ -31,43 +31,19 @@
                    <div class="col-md-1 todoMenu lou2" id="todomenu"></div>
 
                     <div class="col-md-3 todoMenu">
-                        <div class="col-md-12"><h5 class="text-center">ASIGNAR BOTONES AL MENU</h5></div>
+                        <div class="col-md-12"><h5 class="text-center">CONFIGURAR EL MENU DEL SISTEMA</h5></div>
                    
         <div class="col-md-12 contenidoIcon contenidoUsu">
-            <button class="btn btn-warning botonn"  data-toggle="modal" data-target="#botonn">AGREGAR BOTON DE MENU AL USUARIO</button>
+            <button class="btn btn-success botonn"  data-toggle="modal" data-target="#newboton">AGREGAR UN NUEVO BOTON AL MENU</button>
+             <hr>
+            <button class="btn btn-primary botonn"  data-toggle="modal" data-target="#botonn">AGREGAR BOTON DE MENU AL USUARIO</button>
             
         </div>  
 
                     </div>
                    <div class="col-md-7">
-                    
-                      <div class="col-md-12 ingresarBoton">
-                        <div class="row">
-                          <div class="col-md-12"><h5 class="text-center">AGREGAR BOTON DEL MENU</h5></div>
 
-                            <div class="form-group col-md-4">
-                              <input type="text" id="nommenu" class="form-control" placeholder="NOMBRE DEL BOTON" onkeyup="mayus(this);">
-                            </div>
-
-                            <div class="form-group col-md-8">
-                              <input type="text" id="iconomenu" class="form-control" placeholder="ICONO DEL BOTON (BOOTSTRAP 4.6 https://icons.getbootstrap.com/)" >
-                            </div>
-
-                            <div class="form-group col-md-4">
-                              <input type="text" id="clase" class="form-control" placeholder="CLASE" >
-                            </div>
-
-                            <div class="form-group col-md-4">
-                              <input type="text" id="link" class="form-control" placeholder="LINK">
-                            </div>
-
-                            <div class="form-group col-md-4">
-                              <button class="btn btn-success" onclick="ingresarmenu()">INGRESAR</button>
-                            </div>
-
-                          </div>
-<hr>
-                          <div class="col-d-12">
+                          <div class="col-md-12 DetalleVentapedido">
                               <div class="col-md-12"><h5 class="text-center">ELIMINAR MENU AL USUARIO</h5></div>
                               <div class="col-md-12">
                                 <table class="table table-bordered table-striped">
@@ -167,6 +143,47 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">CERRAR</button>
         
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="newboton" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nuevo boton al menu</h5>
+
+      </div>
+      <div class="modal-body">
+      <div class="row">
+                          <div class="col-md-12"><h5 class="text-center">AGREGAR BOTON DEL MENU</h5></div>
+
+                            <div class="form-group col-md-6">
+                              <input type="text" id="nommenu" class="form-control" placeholder="NOMBRE DEL BOTON" onkeyup="mayus(this);">
+                            </div>
+
+                            <div class="form-group col-md-6">
+                              <input type="text" id="iconomenu" class="form-control" placeholder="ICONO DEL BOTON (BOOTSTRAP 4.6 https://icons.getbootstrap.com/)" >
+                            </div>
+
+                            <div class="form-group col-md-6">
+                              <input type="text" id="clase" class="form-control" placeholder="CLASE" >
+                            </div>
+
+                            <div class="form-group col-md-6">
+                              <input type="text" id="link" class="form-control" placeholder="LINK">
+                            </div>
+
+                   
+
+                          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-success" onclick="ingresarmenu()">Crear</button>
       </div>
     </div>
   </div>

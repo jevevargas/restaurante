@@ -1,10 +1,10 @@
-<?php  $orden=$_REQUEST['orden']; echo $orden; ?>
+<?php  $orden=$_REQUEST['orden']; //echo $orden; ?>
 <div class="col-md-12">
     <div class="row">
         <div class="col-md-12"><h5 class="text-center">ORDEN #<?php  echo $orden; ?></h5></div>
         <hr>
-        <button class="btn btn-success"   data-toggle="modal" data-target="#cambiartipo"><i class="bi bi-shuffle"></i> CAMBIAR TIPO DE PAGO</button>
-        <a  class="btn btn-danger esp"  href="precuentaenvior.php?orden=<?php  echo $orden; ?>" onclick="window.open(this.href, this.target, 'width=800,height=500'); return false;" >REIMPRIMIR TICKET</a>
+        <button class="btn btn-success"   data-toggle="modal" data-target="#cambiartipo"><i class="bi bi-shuffle"></i> Cambiar tipo de pago</button>
+        <a  class="btn btn-danger esp"  href="precuentaenvior.php?orden=<?php  echo $orden; ?>" onclick="window.open(this.href, this.target, 'width=800,height=500'); return false;" >Reimprimir ticket</a>
     </div>
 </div>
 <br>
@@ -13,12 +13,12 @@
       <thead>
         <tr>
           <td>ID</td>
-          <td>PLATO</td>
-          <td>CANTIDAD</td>
-          <td>NOTA</td>
-          <td>FECHA</td>
-          <td>ESTADO</td>
-          <td>MESERO</td>
+          <td>Plato</td>
+          <td>Cantidad</td>
+          <td>Nota</td>
+          <td>Fecha</td>
+          <td>Estado</td>
+          <td>Mesero</td>
           <td></td>
         </tr>
       </thead>
@@ -67,7 +67,7 @@
 
           if($ido == ""){
             ?>
-            <a href="" class="btn btn-success">REIMPRMIR FACTURA DE ENVIO</a><br>
+            <a href="" class="btn btn-success">Reimprimir factura de envio</a><br>
             TIPO DE ATENCION : (ENVIO O DOMICILIO)
             <?php
           }elseif($ido > 0){

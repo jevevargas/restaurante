@@ -45,7 +45,7 @@ header("Location: $url");
                 <input type="text" value="<?php echo $idcliente;  ?>" id="idcliente" style="display:none">
                <div class="row">
 
-                   <div class="col-md-4 DetalleVentapedido">
+                   <div class="col-md-5 DetalleVentapedido">
                        <?php
                        
                         date_default_timezone_set('America/El_Salvador');
@@ -68,7 +68,7 @@ header("Location: $url");
                         <div class="col-md-12" id="carretilla"></div>
 
                    </div>
-                   <div class="col-md-7 DetalleVentapedido">
+                   <div class="col-md-6 DetalleVentapedido">
                    <div class="col-md-12" id="menuplato"></div>
                    </div>
                </div>

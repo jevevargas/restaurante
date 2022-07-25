@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200&display=swap');
+
+@font-face {
+    font-family:Fake Receipt;
+    src: url(fuente/Led\ Panel\ Station\ On.ttf);
+}
+.texo{
+    /* font-family: 'Chathura', sans-serif; */
+   /* font-family: 'Codystar', cursive; */
+   /* font-family: 'Roboto Mono', monospace; */
+   /* font-family: 'Abel', sans-serif; */
+   /* font-family: 'Rajdhani', sans-serif; */
+   /* font-family:Receiptional Receipt; */
+   /* font-family: 'IBM Plex Mono', monospace; */
+   /* font-family: 'Volkhov', serif; */
+   /* font-family: 'Changa', sans-serif; */
+   /* font-family: 'Mitr', sans-serif; */
+   /* font-family: 'Alata', sans-serif; */
+   
+    font-size: 13px;
+    /* font-weight: bold; */
+    font-family: Fake Receipt;
+}
+
+body{
+     font-family:Fake Receipt;
+    font-weight: 300;
+    font-size: 15px;
+    font-weight: bold;
+}
+.fecha{
+    font-family: Fake Receipt;
+    margin-top: 85px;
+    margin-left: 265px;
+}
+
+.nom{
+    font-family: Fake Receipt;
+    margin-top: 110; 
+}
+
+.cant{
+    font-family: Fake Receipt;
+    margin-top: 1px;
+    margin-left: 20px;
+}
+
+.total{
+    font-family: Fake Receipt;
+    margin-top:0px; 
+    margin-left: 355px;  
+}
+
+.propina{
+    font-family: Fake Receipt;
+    margin-top:40px; 
+    margin-left: 355px; 
+}
+
+.fin{
+    font-family: Fake Receipt;
+    margin-top:-5px; 
+    margin-left: 355px; 
+}
+
+
+
+.espacio{
+    font-family: Fake Receipt;
+    margin-left: 10px;
+    margin-top: 80px;
+    
+}
+
+.espacio tr td{
+    padding: 0px;
+    font-family: Fake Receipt;
+}
+
+.canti{
+    width: 25px;
+    padding-left: 10px;
+    font-family: Fake Receipt;
+ }
+.descrip{
+    width: 175px;
+    padding-left: 20px;
+    font-family: Fake Receipt;
+}
+
+.descrip2{
+    width: 130px;
+    padding-left: 0px;
+    font-family: Fake Receipt;
+}
+
+.taba{
+font-family: Fake Receipt;
+}
+
+.reciborep{
+    border: 0px solid #FFF;
+    font-family: Fake Receipt;
+    font-weight: 300;
+    font-size: 15px;
+    font-weight: bold;
+}

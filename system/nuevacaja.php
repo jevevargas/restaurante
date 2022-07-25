@@ -35,7 +35,7 @@
                                 $estado->execute();
                                 while ($result = $estado->fetch()) {
                             ?>
-                            <option value="<?php echo $result -> idusuario; ?>"><?php echo $result -> nombre; ?></option>
+                            <option value="<?php echo $result -> idusuario; ?>"><?php echo $result -> nombre; ?> - #<?php echo $result -> idusuario; ?></option>
                                 <?php } ?>
                             </select>
                   

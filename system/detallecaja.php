@@ -8,7 +8,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BIENVENIDO <?php  echo $nombre; ?></title>
+    <link rel="stylesheet" href="../app/css/icono.css">
     <script src="../app/js/caja.js"></script>
+    <script src="../app/js/cdn.js"></script>
+    <script src="../app/js/sw.js"></script>
 </head>
     <body>
     <div class="wrapper d-flex align-items-stretch">
@@ -80,12 +83,12 @@
                         $cocina = $resultventa -> acocina; 
                     ?>
                     <tr>
-                        <td><?php echo $resultventa -> idventa;  ?></td>
-                        <td><?php echo $resultventa -> nomorden;  ?></td>
-                        <td>(<?php echo $resultventa -> cantidadorden;  ?>)</td>
-                        <td>$<?php echo $resultventa -> precioventa;  ?></td>
-                        <td><?php echo $resultventa -> orden;  ?></td>
-                        <td><?php echo $resultventa -> horaorden;  ?></td>
+                        <td style="font-size:12px;"><?php echo $resultventa -> idventa;  ?></td>
+                        <td style="font-size:12px;"><?php echo $resultventa -> nomorden;  ?></td>
+                        <td style="font-size:12px;">(<?php echo $resultventa -> cantidadorden;  ?>)</td>
+                        <td style="font-size:12px;">$<?php echo $resultventa -> precioventa;  ?></td>
+                        <td style="font-size:12px;"><?php echo $resultventa -> orden;  ?></td>
+                        <td style="font-size:12px;"><?php echo $resultventa -> horaorden;  ?></td>
                         <td>
                             <?php 
                                if($cocina == 1){
@@ -95,7 +98,7 @@
                                }
                             ?>
                         </td>
-                        <td></td>
+                      
                     </tr>
                     <?php 
                       $ventas+=($resultventa ->cantidadorden)*($resultventa ->precioventa);
@@ -109,7 +112,12 @@
                <div class="col-md-12"><h5>TOTAL: $<?php echo number_format((float) $ventas,2,'.','');  ?></h5></div>
                <div class="col-md-12"><h5>PROPINA: $<?php echo number_format((float) $propina,2,'.','');  ?></h5></div>
                <div class="col-md-12"><h5><i class="bi bi-arrow-right-short"></i> A COBRAR: $<?php echo number_format((float) $cobrar,2,'.','');  ?></h5></div>
+
+
+               
             </div>
+
+
               <hr>
             <div class="col-md-12">
                 <h5 class="text-center bg-light">SUB CUENTAS</h5>
@@ -153,15 +161,36 @@
                     <div class="col-md-12">
                        
                         <div class="col-md-12">
-<center>
-   <a class="btn btn-info" href="precuentacaja.php?orden=<?php  echo $orden; ?>" class="btn btn-info" onclick="window.open(this.href, this.target, 'width=800,height=500'); return false;"><i class="bi bi-printer-fill"></i> TICKET</a>
+                        <?php  
+                 $sql = "SELECT * FROM venta WHERE fechaorden  BETWEEN  '$inicio' AND '$final' AND orden='$orden' AND estadoorden='0' "; 
+                 $query =$pdo -> prepare($sql); 
+                 $query -> execute(); 
+                 $results = $query -> fetchAll(PDO::FETCH_OBJ); 
+                  $cuenta = $query -> rowCount();
 
-   <a href="" class="btn btn-info"><i class="bi bi-printer-fill"></i> RECIBO</a>
-</center> 
+                  if($cuenta > 20){
+                    ?>
+                     <div class="col-md-12"><h5><?php  echo $cuenta; ?> Items registrados</h5></div>
+                     <a class="btn btn-info" href="precuentacaja.php?orden=<?php  echo $orden; ?>" class="btn btn-info" onclick="window.open(this.href, this.target, 'width=800,height=500'); return false;"><i class="bi bi-printer-fill"></i> TICKET</a>
 
-                        </div>
-                        <br>
-                        <hr>
+                     <button class="btn btn-warning"  data-toggle="modal" data-target="#multiple">FACTURACION MULTIPLE</button>
+
+                    <?php
+                  }elseif($cuenta <= 20){
+                  ?>
+                   <div class="col-md-12"><h5><?php  echo $cuenta; ?> Items registrados</h5></div>
+                  <center>
+                    <a class="btn btn-info" href="precuentacaja.php?orden=<?php  echo $orden; ?>" class="btn btn-info" onclick="window.open(this.href, this.target, 'width=800,height=500'); return false;"><i class="bi bi-printer-fill"></i> TICKET</a>
+
+                    <a href="reciboc.php?orden=<?php  echo $orden; ?>" class="btn btn-info" onclick="window.open(this.href, this.target, 'width=800,height=500'); return false;"><i class="bi bi-printer-fill"></i> RECIBO</a>
+                  </center> 
+
+                  <?php
+                  }
+                  ?>
+                </div>
+                   <br>
+                     <hr>
                         <div class="col-md-12 form-group" id="botonultimopago"></div>
                     </div>
                  </div>
@@ -235,11 +264,29 @@
 </div>
 
 
+<!-- Modal -->
+<div class="modal fade" id="multiple" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">AGREGAR A LA FACTURA</h5>
+      </div>
+      <div class="modal-body">
+      <input type="text" value="<?php  echo $orden; ?>" id="ordenm" style="display:none">
+      <div class="col-md-12" id="tablamixta"></div>
+     
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">CERRAR</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
-
-
+<script src="../app/js/bootstrap.min.js"></script>
      <?php  require_once('pie.php');  ?>
     </body>
 </html>

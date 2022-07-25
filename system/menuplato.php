@@ -133,7 +133,7 @@ foreach($results as $result) {
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">CERRAR</button>
-        <button type="button" class="btn btn-success" onclick="ordene()" id="AgregarOrden">ORDENAR</button>
+        <button type="button" class="btn btn-success" onclick="ordene()" id="AgregarOrden" data-dismiss="modal">ORDENAR</button>
       </div>
     </div>
   </div>
@@ -161,7 +161,7 @@ foreach($results as $result) {
                <a href="ticketbarpedido.php?orden=<?php  echo $orden; ?>" class="btn btn-dark btn-block" onclick="window.open(this.href, this.target, 'width=800,height=500'); return false;"><i class="bi bi-receipt-cutoff" style="font-size:30px"></i><br>BAR</a>
               </div>
               <div class="col-md-12 form-group">
-               <a href="ticketpupusamesa.php?orden=<?php  echo $orden; ?>" class="btn btn-dark btn-block" onclick="window.open(this.href, this.target, 'width=800,height=500'); return false;"><i class="bi bi-receipt-cutoff" style="font-size:30px"></i><br>PUPUSAS</a>
+               <a href="ticketpupusllevar.php?orden=<?php  echo $orden; ?>" class="btn btn-dark btn-block" onclick="window.open(this.href, this.target, 'width=800,height=500'); return false;"><i class="bi bi-receipt-cutoff" style="font-size:30px"></i><br>PUPUSAS</a>
               </div>
             </div>
           </div>

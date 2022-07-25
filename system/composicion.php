@@ -1,5 +1,5 @@
 <?php
-$idplato=$_POST['idplato']; //echo $idplato;
+$idplato=$_POST['idplato']; echo $idplato;
 ?>
 <?php
  require_once('header.php'); 

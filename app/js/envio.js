@@ -622,6 +622,7 @@ console.log(idnota);
   
   function cocina(){
     totalorden = $('#totalorden').val();
+
     $.ajax({
           url: 'acocina.php', // Es importante que la ruta sea correcta si no, no se va a ejecutar
           method: 'POST',
@@ -643,3 +644,31 @@ console.log(idnota);
            });
   }
   
+
+
+  function activarcliente(){
+    var idcliente = $('#idcliente').val(),
+        tipoe = $('#tipoe').val();
+
+        $.ajax({
+          url: 'activarcliente.php', // Es importante que la ruta sea correcta si no, no se va a ejecutar
+          method: 'POST',
+          data: {
+            idcliente:idcliente,
+            tipoe:tipoe
+           },
+           beforeSend: function(){},
+           success: function(){
+             
+             Swal.fire({
+               position: 'top-end',
+             icon: 'success',
+               title: 'ACTIVADO',
+               showConfirmButton: false,
+               timer: 1000
+             })
+             tablauserpedido(); 
+         
+               }
+        });
+  }

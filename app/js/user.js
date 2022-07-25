@@ -75,7 +75,7 @@ $(document).on('click', '.eliminar', function(){
     
     console.log(idu);
     Swal.fire({
-    title: 'LIMINAR USUARIO',
+    title: 'ELIMINAR USUARIO',
      text: "ESTA SEGURO DE ELIMINAR EL USUARIO",
      icon: 'question',
      showCancelButton: true,
